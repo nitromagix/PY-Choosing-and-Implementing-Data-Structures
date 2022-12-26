@@ -1,4 +1,7 @@
 import numpy as np
+import functools as ft
+
+
 a = np.array([1, 2, 3, 4])
 
 print(a)
@@ -10,11 +13,14 @@ def print_one_per_line(arr):
 print_one_per_line(a)
 
 
+# def sum_of_array(arr):
+#     sum = 0
+#     for item in arr:
+#         sum += item
+#     return sum
+  
 def sum_of_array(arr):
-    sum = 0
-    for item in arr:
-        sum += item
-    return sum
+   return ft.reduce(lambda a,b: a+b, arr)
 
 print(sum_of_array(a))
 
@@ -25,3 +31,5 @@ m = mulitply_by_three(a)
 print(m)
 
 print_one_per_line(m)
+
+
